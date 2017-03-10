@@ -90,8 +90,9 @@
                 </div>
             </div>
         <div class="img-responsive">
+            <img src="conti2.jpg" >Conti!!
             <div class="carousel-caption">
-                 <img src="conti2.jpg" >Conti!!
+                 
             </div>
         </div>
     </div>
