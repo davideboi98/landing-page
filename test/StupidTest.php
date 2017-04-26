@@ -1,15 +1,35 @@
 <?php
-namespace phpUnitTutorial\Test;
-class StupidTest extends \PHPUnit_Framework_TestCase
+namespace PHPUnit\Framework\Tests;
+use \PHPUnit\Framework\DOMTestCase;
+class IndexTest extends DOMTestCase
 {
-    public function testTrueIsTrue()
+    private $html;
+    protected function setUp()
     {
-        $foo = true;
-        $this->assertTrue($foo);
+        $this->html = file_get_contents('index.php');
     }
-    public function testHTML(){
-    $htmlOutput='<p id="my_id">ciao</p>';
-    $matcher=array('id'=>'my_id');
-    $this>assertTag($matcher,$htmlOutput);    
+    public function testTagContent()
+    {
+        $selector = 'h1.title';
+        $content  = 'Test title text';
+        $this->assertSelectEquals($selector, $content, true, $this->html);
+    }
+    public function testClassContent()
+    {
+        $selector = 'div.foo';
+        $content  = 'Test class text';
+        $this->assertSelectEquals($selector, $content, true, $this->html);
+    }
+    public function testCountList()
+    {
+        $selector = 'ul > li';
+        $count    = 2;
+        $this->assertSelectCount($selector, $count, $this->html);
+    }
+    public function testRegExpContent()
+    {
+        $selector = 'div.bar';
+        $regexp   = '/Pierro/';
+        $this->assertSelectRegExp($selector, $regexp, true, $this->html);
     }
 }
