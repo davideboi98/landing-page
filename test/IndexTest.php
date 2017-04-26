@@ -14,7 +14,7 @@ class IndexTest extends DOMTestCase
         $content  = 'Stylish Portfolio - Start Bootstrap Theme';
         $this->assertSelectEquals($selector, $content, true, $this->html);
     }
-    public function testClassContent()
+    /*public function testClassContent()
     {
         $selector = 'h1.white';
         $content  = 'Ultras Cagliari!';
@@ -25,7 +25,7 @@ class IndexTest extends DOMTestCase
         $selector = 'ul > li';
         $count    = 2;
         $this->assertSelectCount($selector, $count, $this->html);
-    }/*
+    }
     public function testRegExpContent()
     {
         $selector = 'div.bar';
