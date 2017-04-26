@@ -16,8 +16,8 @@ class IndexTest extends DOMTestCase
     }
     public function testClassContent()
     {
-        $selector = 'div.text-vertical-center';
-        $content  = '<h1 class="white">Ultras Cagliari!</h1>';
+        $selector = 'h1.white';
+        $content  = 'Ultras Cagliari!';
         $this->assertSelectEquals($selector, $content, true, $this->html);
     }
     public function testCountList()
